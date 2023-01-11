@@ -38,8 +38,12 @@ void* pop(cr_stack *s)
 }
 
 // work just as if you pop then push the result
-void* peek(cr_stack *s)
+void* peek_stack(cr_stack *s)
 {
+  if((s->count) -1 < 0){
+    printf("ERROR: Underpeeking stack at address: %p\n",s);
+    exit(1);
+  }
   return s->items[(s->count) -1];
 }
 
