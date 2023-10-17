@@ -41,7 +41,7 @@ CR_STACK_TYPE pop(cr_stack *s)
 // work just as if you pop then push the result
 CR_STACK_TYPE peek_stack(cr_stack *s)
 {
-  if((s->count) -1 < 0){
+  if((int)(s->count) -1 < 0){
     printf("ERROR: Underpeeking stack at address: %p\n",s);
     exit(1);
   }

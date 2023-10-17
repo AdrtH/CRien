@@ -9,7 +9,7 @@
 typedef struct windowiter_t {
   CR_WINDOWITER_TYPE*		   start;
   size_t			   length;
-  const CR_LINKEDLIST_TYPE const * init_start;
+  const CR_WINDOWITER_TYPE *       init_start;
   const size_t                     length_arr;
 } windowiter_t;
 
@@ -30,7 +30,7 @@ void windowiter_next(windowiter_t *windowiter, size_t step){
 CR_WINDOWITER_TYPE *windowiter_get(windowiter_t *windowiter)
 {
   CR_WINDOWITER_TYPE* ret = malloc(sizeof(*ret)*windowiter->length);
-  for(int i = 0; i < windowiter->length; ++i){
+  for(int i = 0; i < (int)windowiter->length; ++i){
     *(ret+i) = *(windowiter->start +i);
   }
   return ret;
